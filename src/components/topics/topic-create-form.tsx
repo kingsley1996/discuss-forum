@@ -9,6 +9,7 @@ import {
     PopoverTrigger,
     PopoverContent
 } from '@nextui-org/react';
+import FormButton from '@/components/common/form-button';
 import * as actions from '@/actions';
 
 export default function TopicCreateForm() {
@@ -29,21 +30,23 @@ export default function TopicCreateForm() {
                             label="name" 
                             labelPlacement="outside" 
                             placeholder="Name" 
-                            isInvalid={!!formState.errors.name}
-                            errorMessage={formState.errors.name?.join(', ')}
+                            isInvalid={!!formState?.errors?.name}
+                            errorMessage={formState?.errors?.name?.join(', ')}
                         />
                         <Textarea
                             name="description"
                             label="Description"
                             labelPlacement="outside"
                             placeholder="Describe your topic"
-                            isInvalid={!!formState.errors.description}
-                            errorMessage={formState.errors.description?.join(', ')}
+                            isInvalid={!!formState?.errors?.description}
+                            errorMessage={formState?.errors?.description?.join(', ')}
                         />
 
-                        {formState.errors._form ? <div className="p-2 bg-red-200 border border-red-400">{formState.errors._form.join(', ')}</div> : null}
+                        {formState?.errors._form ? <div className="p-2 bg-red-200 border border-red-400">{formState?.errors._form.join(', ')}</div> : null}
 
-                        <Button type="submit">Submit</Button>
+                        <FormButton>
+                            Save
+                        </FormButton>
                     </div>
                 </form>
             </PopoverContent>
