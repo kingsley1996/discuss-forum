@@ -32,7 +32,7 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
                         <h3 className="text-lg">Create a Post</h3>
                         <Input 
                             isInvalid={!!formState?.errors?.title}
-                            errorMessage={formState.errors.title?.join(', ')}
+                            errorMessage={formState?.errors.title?.join(', ')}
                             name="title"
                             label="Title"
                             labelPlacement="outside"
@@ -40,7 +40,7 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
                         />
                         <Textarea 
                             isInvalid={!!formState?.errors?.content}
-                            errorMessage={formState.errors.content?.join(', ')}
+                            errorMessage={formState?.errors.content?.join(', ')}
                             name="content"
                             label="Content"
                             labelPlacement="outside"
@@ -48,8 +48,8 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
                         />
 
                         {
-                            formState.errors._form ? (
-                                <div className="rounded p-2 bg-red-200 border border-red-400">{formState.errors._form?.join(', ')}
+                            formState?.errors._form ? (
+                                <div className="rounded p-2 bg-red-200 border border-red-400">{formState?.errors._form?.join(', ')}
                                 </div>
                             ) : null}
 
